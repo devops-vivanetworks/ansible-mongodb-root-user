@@ -1,0 +1,4 @@
+---
+default_database: "admin"
+default_state: "present"
+default_update_password: "always"

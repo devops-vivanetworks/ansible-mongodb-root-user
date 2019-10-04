@@ -1,0 +1,11 @@
+---
+galaxy_info:
+  description: Creates root users for MongoDB
+  company: Traveloka
+  platforms:
+  - name: Ubuntu
+    versions:
+    - trusty
+  categories:
+  - database:nosql
+dependencies: []

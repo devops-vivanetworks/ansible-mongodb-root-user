@@ -1,0 +1,30 @@
+---
+
+- block:
+    - name: ensure root user is present
+      mongodb_user:
+        login_host: "{{ login_host }}"
+        login_port: "{{ login_port }}"
+        login_database: "{{ login_database }}"
+        name: "{{ login_user }}"
+        password: "{{ login_password }}"
+        database: "{{ login_database }}"
+        replica_set: "{{ replica_set|default(omit) }}"
+        roles: "root"
+        state: "present"
+        update_password: "on_create"
+  rescue:
+    - name: ensure root user is present
+      mongodb_user:
+        login_host: "{{ login_host }}"
+        login_port: "{{ login_port }}"
+        login_database: "{{ login_database }}"
+        login_user: "{{ login_user }}"
+        login_password: "{{ login_password }}"
+        name: "{{ login_user }}"
+        password: "{{ login_password }}"
+        database: "{{ login_database }}"
+        replica_set: "{{ replica_set|default(omit) }}"
+        roles: "root"
+        state: "present"
+        update_password: "on_create"

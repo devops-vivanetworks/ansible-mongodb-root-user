@@ -1,0 +1,5 @@
+---
+login_host: localhost
+login_port: 27017
+login_database: admin
+login_user: root
