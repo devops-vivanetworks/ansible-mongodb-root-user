@@ -12,7 +12,7 @@ This variable is not declared neither in defaults or vars, but must be passed ex
   desc: password for root user
 
 ### Defaults ###
-
+```yaml
 - name: login_host
   value: localhost
   desc: Host to login into
@@ -25,9 +25,10 @@ This variable is not declared neither in defaults or vars, but must be passed ex
 - name: login_user
   value: root
   desc: User used for authentication
+```
 
 ### Vars ###
-
+```yaml
 - name: default_database
   value: "admin"
   desc: Default database to create users in if alternative value not provided
@@ -37,13 +38,15 @@ This variable is not declared neither in defaults or vars, but must be passed ex
 - name: default_update_password
   value: "always"
   desc: Default behaviour when changing password of the user if alternative not provided
+```
 
 ## Dependencies ##
-
-    - role: https://github.com/traveloka/ansible-pymongo
+- role: https://github.com/traveloka/ansible-pymongo
 
 ## Example Playbook ##
-    - hosts: servers
-      roles:
-        - role: ansible-mongo-root-user
-          login_password: rahasia007
+```yaml
+- hosts: servers
+  roles:
+    - role: ansible-mongo-root-user
+      login_password: rahasia007
+```
